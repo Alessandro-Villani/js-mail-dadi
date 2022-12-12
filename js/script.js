@@ -68,3 +68,22 @@ inputButton.addEventListener('click', function(){
 
 });
 
+
+
+//! ESERCIZIO 2
+
+    //1. Add Email Array
+    
+    const email = ['mariorossi@gmail.com', 'luigiverdi@gmail.com, antoniobianchi@gmail.com, pippobaudo@libero.it'];
+
+    //2. Add Input Element
+
+    const inputEmail = document.getElementById('email');
+    const inputLoginButton = document.getElementById('login');
+
+    //3. Add Output Element
+    
+    const targetLoginMessage = document.getElementById('login-message');
+
+
+
