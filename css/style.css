@@ -1,0 +1,20 @@
+/*! DEBUG */
+
+.debug{
+    border: 1px dashed white;
+}
+
+/*! GENERICS */
+
+body{
+    background-color: dodgerblue;
+    color: white;
+}
+
+section{
+    text-align: center;
+}
+
+h1{
+    font-size: 68px;
+}
