@@ -14,3 +14,15 @@ stampa un messaggio appropriato sull’esito del controllo.
 ----------------------------------------------------------------------------------------*/
 
 console.log('JS OK');
+
+//! ESERCIZIO 1
+
+//1. Select Target Elements
+
+const targetPlayerNumber = document.getElementById('player-number');
+const targetCpuNumber = document.getElementById('cpu-number');
+const targetWinner = document.getElementById('winner');
+
+//2. Select Input Button
+
+const inputButton = document.getElementById('roll-dice');
