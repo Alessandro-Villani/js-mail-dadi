@@ -102,20 +102,18 @@ inputLoginButton.addEventListener('click', function(){
     //4.3 Set login message error
     let loginMessage = '<p class="bg-danger p-2"><i class="fa-solid fa-triangle-exclamation me-2"></i>Email non presente</p>';
 
-    //4.4 For every element in the array...
-    for(let i = 0; i < emailDatabase.length; i++){
+    //4.4 For every element in the array and until flag is false...
+    for(let i = 0; i < emailDatabase.length && !isPresent; i++){
         console.log('i= ' + i);
-        //4.4.1 if flag is false
-            if (!isPresent){
-            //4.4.2 Check if email is equal to Array Index's content
-                if(email === emailDatabase[i]){
-                    //4.4.2.1 Set flag true
-                    isPresent = true;
-                    //4.4.1.2 Set login message successfull
-                    loginMessage = '<p class="bg-success p-2"><i class="fa-regular fa-circle-check me-2"></i>Accesso effettuato</p>';
+        //4.4.1 Check if email is equal to Array Index's content
+        if(email === emailDatabase[i]){
+            //4.4.1.1 Set flag true
+            isPresent = true;
+            //4.4.1.2 Set login message successfull
+            loginMessage = '<p class="bg-success p-2"><i class="fa-regular fa-circle-check me-2"></i>Accesso effettuato</p>';
                     ////console.log('loginMessage= ' + loginMessage);
-                }
-            }
+        }
+    
     }
 
     targetLoginMessage.innerHTML = loginMessage
