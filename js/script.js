@@ -26,3 +26,45 @@ const targetWinner = document.getElementById('winner');
 //2. Select Input Button
 
 const inputButton = document.getElementById('roll-dice');
+
+//3. Output variables
+let playerNumber = 0;
+let cpuNumber = 0;
+
+//3. Add event listener to button
+
+inputButton.addEventListener('click', function(){
+
+    //3.1 Calculate random numbers
+
+    for(let i = 0; i < 2; i++){
+
+        const randomNumber = Math.floor(Math.random() * 6) + 1;
+        console.log(randomNumber);
+
+        if (i === 0){
+            playerNumber = randomNumber;
+        } else {
+            cpuNumber = randomNumber;
+        }
+
+    }
+
+    //3.2 Define winner
+    
+    let result = 'Hai perso!'
+
+    if(playerNumber > cpuNumber){
+        result = 'Hai vinto!';
+    } else if (playerNumber === cpuNumber){
+        result = 'Pareggio!';
+    }
+
+    //3.3 Page Outputs
+
+    targetPlayerNumber.innerText = 'Il tuo numero è: ' + playerNumber;
+    targetCpuNumber.innerText = 'Il mio numero è: ' + cpuNumber;
+    targetWinner.innerText = result
+
+});
+
