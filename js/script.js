@@ -74,7 +74,7 @@ inputButton.addEventListener('click', function(){
 
 //1. Add Email Array
 
-const email = ['mariorossi@gmail.com', 'luigiverdi@gmail.com, antoniobianchi@gmail.com, pippobaudo@libero.it'];
+const emailDatabase = ['mariorossi@gmail.com', 'luigiverdi@gmail.com', 'antoniobianchi@gmail.com', 'pippobaudo@libero.it'];
 
 //2. Add Input Element
 
@@ -85,9 +85,39 @@ const inputLoginButton = document.getElementById('login');
     
 const targetLoginMessage = document.getElementById('login-message');
 
+//4. Set flag for email
+let isPresent = false;
+
 //4. Add event listener to button
 
 inputLoginButton.addEventListener('click', function(){
+    //4.1 Reset flag
+    isPresent = false;
+
+    //4.2 Take input value
+    const email = inputEmail.value;
+    console.log(email);
+
+    //4.3 Set login message error
+    let loginMessage = 'Email non presente'
+
+    //4.4 For every element in the array...
+    for(let i = 0; i < emailDatabase.length; i++){
+        console.log('i= ' + i);
+        //4.4.1 if flag is false
+            if (!isPresent){
+            //4.4.2 Check if email is equal to Array Index's content
+                if(email === emailDatabase[i]){
+                    //4.4.2.1 Set flag true
+                    isPresent = true;
+                    //4.4.1.2 Set login message successfull
+                    loginMessage = 'Accesso effettuato'
+                    ////console.log('loginMessage= ' + loginMessage);
+                }
+            }
+    }
+
+    targetLoginMessage.innerHTML = `<p>${loginMessage}</p>`
 
 
 
